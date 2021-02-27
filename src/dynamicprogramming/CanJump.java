@@ -4,7 +4,12 @@ package dynamicprogramming;
  * @author wangyouwei
  */
 public class CanJump {
-    public boolean canJump(int[] nums) {
+    public static boolean canJump(int[] nums) {
+        long initialMemory = Runtime.getRuntime().totalMemory();
+        System.out.println( initialMemory );
+        long maxMemory = Runtime.getRuntime().maxMemory();
+        System.out.println( maxMemory );
+        int[] heap = new int[100240*100240];
         int n = nums.length;
         boolean[] dp = new boolean[n];
         dp[0] = true;
@@ -36,5 +41,6 @@ public class CanJump {
     public static void main(String[] args) {
         int[] nums = {0};
         canJumpByGreed( nums);
+        canJump( nums );
     }
 }
