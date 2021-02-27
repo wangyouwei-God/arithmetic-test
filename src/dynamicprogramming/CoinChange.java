@@ -16,7 +16,7 @@ public class CoinChange {
         for ( int i=0; i<coins.length; i++ ) {
             if ( amount >= coins[i] ) {
                 int preSum = helper( coins, amount-coins[i]);
-                if ( preSum < Integer.MAX_VALUE ) {
+                if (  preSum != Integer.MAX_VALUE ) {
                     minSum = Math.min(minSum, preSum + 1);
                 }
             }
@@ -25,7 +25,7 @@ public class CoinChange {
     }
 
     public static void main(String[] args) {
-        int[] nums = {1,2,5};
+        int[] nums = {2,5};
         System.out.println( coinChange( nums, 20) );
     }
 }
